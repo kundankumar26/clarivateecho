@@ -1,0 +1,306 @@
+$variable: #5e33bf;
+$headercolor: #282828;
+$whiteshade: #Fdfcfa;
+
+.toolbar {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: $whiteshade;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: 600;
+    z-index: 10;
+    position: fixed;
+
+    .logo{
+        height: 32px;
+        margin: 13.9%;
+    }
+}
+
+.form-body {
+    margin-top: 70px;
+
+    .app-title {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 0;
+
+        .listen-body-img {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;;
+
+            img {
+                height: 80px;
+                width: 80px;
+            }
+
+            span {
+                font-size: 13px;
+                font-weight: 500;
+                font-family: 'roboto', sans-serif;
+                text-align: center;
+            }
+        }
+
+        .innovate-voice {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 120px;
+
+            .appName {
+                font-size: 45px;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $variable;
+            }
+    
+            .appname-quote {
+                font-size: 16px;
+                font-weight: normal;
+                color: $headercolor;
+                text-align: right;
+            }
+        }
+    }
+
+    .app-listen-body {
+        height: 550px;
+        width: 100%;
+        background-image: url('/assets/images/home1.jpg');
+        display: flex;
+        justify-content: space-evenly;
+        //background-attachment: fixed;
+
+        .recorder {
+            height: 100px;
+            width: 100px;
+            border: 1px solid rgb(243, 243, 243);
+            position: fixed;
+            color: white;
+            background-color: $variable;
+            border-radius: 500px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+            z-index: 100;
+            margin: 50px 0 0 0;
+        
+            .bi {
+                color: white;
+            }
+        }
+    }
+
+    .grid{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .ag-spinner {
+            color: $variable;
+            width: 70px; 
+            height: 70px;
+            margin: 50px 0;
+        }
+    
+        .ag-grid-box {
+            width: 100%; 
+            height: 600px;    
+            margin-top: 50px;
+            border: 1px solid rgb(241, 241, 241);
+            color: rgb(83, 83, 83);
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+        }
+    
+        .export-btn {
+            margin: 50px 0;
+        }
+    }
+}
+
+.footer  {
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $headercolor;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    align-items: middle;
+}
+
+::ng-deep .ag-body-viewport::-webkit-scrollbar-thumb {
+    background-color: #646464;
+    border-radius: 5px;
+}
+::ng-deep .ag-body-viewport::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+::ng-deep .patent-checkbox {
+    display: flex;
+    justify-content: center;
+    left: 0px;
+    padding: 15px 5px 0 5px !important;
+
+    input {
+        height: 18px;
+        width: 18px;
+        background-color: #5e33bf;
+        transition: background-color .4s cubic-bezier(.25,.8,.25,1), box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    }
+
+    input:checked {
+        background-color: #5e33bf !important;
+        color: #99a1a7;
+    }
+}
+
+::ng-deep .ag-theme-material .ag-cell, .ag-theme-material .ag-full-width-row .ag-cell-wrapper.ag-row-group {
+    line-height: 30px;
+}
+
+
+.text {
+    background-color:#ff0000;
+    color:#fff;
+    display:inline-block;
+    padding-left:4px;
+    position: fixed;
+    right: 14%;
+    // float: right;
+    top: 13%;
+}
+
+//help
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+// Ribbon Box Styling
+$white: #fff;
+$ribbon-width: 200px;
+$ribbon-height: $ribbon-width/10 + 2*$ribbon-width/100;
+$ribbon-bg-clr: #5e33bf;
+$border-clr: darken($ribbon-bg-clr, 20%);
+$border-width: $ribbon-width/20;
+$border-height: $border-width;
+$ribbon-txt-clr: $white;
+$font: 'Neuton', serif;
+.uppercase {
+	text-transform: uppercase;
+}
+.transition {
+	transition: all ease-in .3s;
+}
+
+.font-break {
+	font-size: 0;
+}
+
+.card {
+	//background: beige;
+	width: $ribbon-width - $border-width*2 - 10;
+	height: 185px;
+	margin: 21% auto 0;
+	border-radius: 0 0 8px 8px;
+    position: fixed;
+    left: 87.5%;
+    float: right;
+    top: 9%;
+
+	.image, .copy {
+		//width: 100%;
+	}
+
+	.image {
+		//border-radius: 10px 10px 0 0;
+		//overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+
+	.copy {
+		//background: #fff;
+
+		padding: 16px;
+		font-size: 16px;
+		display: flex;
+		flex-direction:column;
+	}
+
+	.content {
+        padding:2px;
+        font-size: 10px;
+	}
+	.margin {
+		margin-top : 39px
+	}
+
+	.ribbon {
+		position: absolute;
+		left: -$border-width;
+		top: $border-height*1.5;
+		width: $ribbon-width - 10;
+		height: $ribbon-height;
+		background: $ribbon-bg-clr;
+		color: $ribbon-txt-clr;
+		line-height: $ribbon-height;
+		font-family: $font;
+		font-size: $ribbon-height/2;
+		text-align: center;
+		letter-spacing: 2px;
+		//.transition;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			width: $border-width - 10;
+			height: $border-height;
+			border: $border-width/2 solid $border-clr;
+		}
+		&:before {
+			top: -$border-height;
+			left: 0;
+			border-top-color: transparent;
+			border-left-color: transparent;
+		}
+		&:after {
+			top: $ribbon-height;
+			left: $ribbon-width - $border-width - 10;
+			border-right-color: transparent;
+			border-bottom-color: transparent;
+		}
+	}
+
+}
+
+
+
+//end help here
+  
+

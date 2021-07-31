@@ -1,0 +1,8 @@
+
+<div class="content">
+  <input type="checkbox"
+    [checked]="params.data.checked"
+    (change)="onClickOnExport(!params.data.checked,params.rowIndex)"
+  />
+  <span class="record-text">Record No {{params.data.serialNo}}</span>
+</div>

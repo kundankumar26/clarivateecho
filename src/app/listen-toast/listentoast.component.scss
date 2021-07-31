@@ -1,0 +1,45 @@
+.toast-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+
+  & .report-icon {
+    height: 50px;
+    width: 50px;
+    line-height: 45px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  & .toast-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 15px;
+
+    & .toast-export-btn {
+      display: flex;
+      align-items: center;
+
+      & .undo-delete {
+        border-color: #ffffff;
+        color: transparent;
+        margin-right: 10px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      & .undo-delete:not(:disabled):focus {
+        box-shadow: 0 0 0 1px #ffffff;
+      }
+
+      & mat-icon {
+        cursor: pointer;
+      }
+    }
+  }
+}

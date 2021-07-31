@@ -1,0 +1,93 @@
+$variable: #5e33bf;
+$bgcolor: #Fdfcfa;
+
+.icon {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.filter-select {
+  width: 88%;
+  list-style: none;
+  color: rgb(105, 105, 105);
+  border: 1px solid #ccc;
+  border-top: none;
+  position: absolute;
+  height: 170px;
+  background: #fff;
+  overflow-y: auto;
+  padding-left: 0;
+  z-index: 2;
+  border-radius: 5px;
+
+  .filter-select-list {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
+    height: 45px;
+
+    .artist-name {
+      display: inline-block;
+    }
+  }
+
+  .filter-select-list:hover {
+    background:  #f3f3f3;
+    color: rgb(0, 0, 0, 0.9)
+  }
+  
+}
+
+.filter-select::-webkit-scrollbar-thumb {
+  background-color: #646464;
+  border-radius: 5px;
+}
+
+.filter-select::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+
+
+.form-body {
+  width: 1000px;
+  background-color: $bgcolor;
+  border: 1px solid rgb(241, 241, 241);
+  color: rgb(83, 83, 83);
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  float: left;
+  margin: 50px 0 0 50px;
+  padding: 40px 60px;
+
+  .listen-text-label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  input, textarea {
+    outline: none;
+    border: 1px solid $variable;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 12px;
+    opacity: 0.85;
+    background-color: #Fdfcfa;
+  }
+  
+  textarea:focus, input:focus {
+    padding: 9px 11px;
+    border: 2px solid $variable;
+  }
+  
+  .search {
+    margin-top: 28px;
+    float: right;
+  }
+}

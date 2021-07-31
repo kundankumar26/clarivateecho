@@ -1,0 +1,73 @@
+<body>
+  <div class="toolbar" role="banner">
+    <img fxLayoutAlign="start center" src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.2.6" alt="logo" class="logo" />
+  </div>
+
+  <div class="form-body">
+    <div class="app-title">
+      <div class="listen-body-img">
+        <img src='https://clarivate.com/wp-content/uploads/2021/04/Purple_Pictograms_Final_on_White_RGB_51.png' alt="mic-img"/>
+        <span>Innovate using your voice</span>
+      </div>
+      <div class="innovate-voice">
+        <h1 class="text-center appName"> Clarivate's Echo </h1>
+          <span class="appname-quote">- We See And Listen Through Our Customers..!!</span>
+      </div>
+    </div>
+
+    <div  class="app-listen-body">
+      <ng-template [ngIf]="!ml.voiceBotReady || !ml.pronoun">
+        <app-listen *ngIf="speech.speechSupported" ></app-listen>
+      </ng-template>
+      <div>
+        <button class="recorder" (click)="toggleClick($event)" [ngStyle]="{'background-color': speech.listening === true ? 'red' : '#5e33bf'}">
+          <i class="bi bi-mic-fill" *ngIf="speech.listening" ></i>
+          <i class="bi bi-mic-mute-fill"  *ngIf="!speech.listening" ></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid container">
+      <ag-grid-angular *ngIf="loader === false && rowData.length"
+        class="ag-theme-material ag-grid-box"
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [overlayNoRowsTemplate]="'No data found'"
+        [animateRows]="true">
+      </ag-grid-angular>
+
+      <div class="spinner-border ag-spinner" role="status" *ngIf="loader">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+      <div class="export-btn" *ngIf="loader === false && rowData.length">
+        <button  *ngIf="rowData.length > 0 && loader === false" class="button" (click)="export()">Export</button>
+      </div>
+    </div>
+    <!-- <app-voiceBot *ngIf="ml.voiceBotReady && ml.pronoun"></app-voiceBot> -->
+  </div>
+
+  <div class="footer">
+    <span class="copyright">&copy;2021 Clarivate Analytics. All rights reserved.</span>
+  </div>
+
+<!-- //help -->
+  <div class="card">
+    <div class="image">
+    </div>
+    <div class="copy">
+      <span class="content margin">Say 'Enter Text Covid'</span>
+      <span class="content">Say 'Enter Publication 1234'</span>
+      <span class="content">Say 'Enter Custom Field'</span>
+      <span class="content"> Say 'Search'</span>
+      <span class="content">Say 'Select Record 01'</span>
+      <span class="content">Say 'Deselect Record 01'</span>
+      <span class="content">Say 'Export'</span>
+    </div>
+    <div class="ribbon">
+      I can Understand
+    </div>
+  </div>
+  <!-- ends help -->
+</body>

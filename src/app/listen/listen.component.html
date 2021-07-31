@@ -1,0 +1,62 @@
+<!-- <div class="alert alert-info mt-3"> -->
+
+  <!-- <div class="row mb-3">
+    <div class="col btn-group">
+      <button
+        class="btn btn-primary col-6"
+        (click)="speech.startListening()"
+        [disabled]="speech.listening">
+          <img class="icon" src="/assets/images/mic-on.png">{{btnLabel}}
+      </button>
+
+      <button
+        class="btn btn-danger col-6"
+        (click)="speech.abort()"
+        [disabled]="!speech.listening">
+          <img class="icon" src="/assets/images/mic-off.png">Stop
+      </button>
+    </div>
+  </div> -->
+
+  <!-- <div class="row" *ngIf="errorMsg || arrayFull">
+    <div class="col">
+      <p class="alert alert-warning">
+        <ng-template [ngIf]="errorMsg">{{errorMsg}}</ng-template>
+        <ng-template [ngIf]="arrayFull">You've already filled in all the available fields for <strong>{{arrayFull}}</strong>.</ng-template>
+      </p>
+    </div>
+  </div> -->
+<!-- </div> -->
+
+
+
+
+<form #MyForm="ngForm" class="container form-body">
+  <div class="form-group">
+    <label class="listen-text-label">Text field</label>
+    <input type="text" style="position: relative; height: 40px;" name="email-field" placeholder="Say enter text field"
+        [(ngModel)]="textField" (ngModelChange)="getSuggestions()" autocomplete="off">
+    <div *ngIf="suggestedData.length">
+      <ul class="filter-select">
+        <li class="filter-select-list" *ngFor="let data of suggestedData" (click)="selectedQuery(data)"><span class="artist-name">{{ data }}</span>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="listen-text-label" for="exampleFormControlTextarea1">Publication number</label>
+    <textarea id="exampleFormControlTextarea1" rows="1" style="min-height: 40px;" placeholder="Say enter publication number" name="textarea-field" required
+        [(ngModel)]="publicationNumber"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="listen-text-label" for="exampleFormControlTextarea2">Custom field</label>
+    <textarea id="exampleFormControlTextarea2" rows="1" style="min-height: 40px;" placeholder="Say enter custom field" name="textarea-field2" required
+        [(ngModel)]="dwpiField"></textarea>
+  </div>
+
+  <button class="button search" (click)="submitForm()">Search</button>
+
+</form>
+
+
