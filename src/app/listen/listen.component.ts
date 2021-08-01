@@ -156,16 +156,16 @@ if( this.textField){
     if (err) {
       console.log('Speech Recognition:', err);
       this.dataService.errorMsg = err.message;
-      if(err.error === 'no match'){
-        this.snackBar.openFromComponent(ListenToastComponent, {
-          duration: 10 * 1000,
-          verticalPosition: 'bottom',
-          panelClass: 'toast-listen-bar',
-          data: {}
-        });
-      }
+      // if(err.error === 'no match'){
+      //   this.snackBar.openFromComponent(ListenToastComponent, {
+      //     duration: 10 * 1000,
+      //     verticalPosition: 'bottom',
+      //     panelClass: 'toast-listen-bar',
+      //     data: {}
+      //   });
+      // }
     } else {
-      this.snackBar.dismiss();
+      // this.snackBar.dismiss();
       this.dataService.errorMsg = null;
     }
   }
