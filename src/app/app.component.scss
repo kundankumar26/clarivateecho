@@ -28,7 +28,7 @@ $whiteshade: #Fdfcfa;
 
     .app-title {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         padding: 15px 0;
 
         .listen-body-img {
@@ -36,7 +36,7 @@ $whiteshade: #Fdfcfa;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-left: 5px;;
+            margin-right: 110px;
 
             img {
                 height: 80px;
@@ -55,10 +55,10 @@ $whiteshade: #Fdfcfa;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-right: 120px;
+            margin-left: 50px;
 
             .appName {
-                font-size: 45px;
+                font-size: 35px;
                 text-transform: uppercase;
                 font-weight: 600;
                 color: $variable;
